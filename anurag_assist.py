@@ -34,6 +34,35 @@ st.markdown(
         background-color: {CREAM};
     }}
 
+    /* Force readable text everywhere, even if dark mode is active */
+    .stApp, .stApp p, .stApp span, .stApp li, .stApp label,
+    .stMarkdown, .stMarkdown p, .stMarkdown li,
+    div[data-testid="stMetricValue"], div[data-testid="stMetricLabel"],
+    div[data-testid="stCaptionContainer"] {{
+        color: {SLATE} !important;
+    }}
+
+    /* Tab labels */
+    button[data-baseweb="tab"] p {{
+        color: {NAVY} !important;
+        font-weight: 600;
+    }}
+    button[data-baseweb="tab"][aria-selected="true"] p {{
+        color: {GOLD} !important;
+    }}
+
+    /* Chat message text */
+    div[data-testid="stChatMessage"] p, div[data-testid="stChatMessage"] li {{
+        color: {SLATE} !important;
+    }}
+
+    /* Radio button labels in sidebar stay light on navy */
+    section[data-testid="stSidebar"] .stMarkdown, 
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] label {{
+        color: #f0f6ff !important;
+    }}
+
     /* Top banner */
     .site-header {{
         background: linear-gradient(135deg, {NAVY_DEEP} 0%, {NAVY} 60%, {TEAL} 100%);
