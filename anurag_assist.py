@@ -56,13 +56,17 @@ st.markdown(
         color: {SLATE} !important;
     }}
 
-    /* Tab labels */
-    button[data-baseweb="tab"] p {{
+    /* Tab labels — catch any inner element Streamlit renders (p, div, span) */
+    button[data-baseweb="tab"], button[data-baseweb="tab"] * {{
         color: {NAVY} !important;
-        font-weight: 600;
+        font-weight: 600 !important;
     }}
-    button[data-baseweb="tab"][aria-selected="true"] p {{
+    button[data-baseweb="tab"][aria-selected="true"],
+    button[data-baseweb="tab"][aria-selected="true"] * {{
         color: {GOLD} !important;
+    }}
+    div[data-baseweb="tab-highlight"] {{
+        background-color: {GOLD} !important;
     }}
 
     /* Chat message text */
@@ -87,21 +91,21 @@ st.markdown(
     }}
     .site-header h1 {{
         font-family: 'Playfair Display', serif;
-        color: {CREAM};
+        color: {CREAM} !important;
         font-size: 2.6rem;
         margin-bottom: 0.3rem;
         letter-spacing: 0.3px;
     }}
-    .site-header p {{
-        color: {CREAM};
+    .site-header p, .site-header p * {{
+        color: {CREAM} !important;
         font-size: 1.05rem;
         font-weight: 500;
         letter-spacing: 0.5px;
         text-transform: uppercase;
         margin: 0;
     }}
-    .site-header .tagline {{
-        color: {CREAM};
+    .site-header .tagline, .site-header .tagline * {{
+        color: {CREAM} !important;
         text-transform: none;
         font-weight: 400;
         font-size: 1rem;
