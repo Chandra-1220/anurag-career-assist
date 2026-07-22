@@ -179,7 +179,25 @@ st.markdown(
         margin-bottom: 0.4rem;
     }}
 
-    footer {{visibility: hidden;}}
+    /* Chat input box — force visible text regardless of theme */
+    div[data-testid="stChatInput"] textarea,
+    div[data-testid="stChatInputTextArea"] textarea,
+    .stChatInput textarea {{
+        background-color: #ffffff !important;
+        color: {SLATE} !important;
+        caret-color: {SLATE} !important;
+        border: 1px solid #d8d2c2 !important;
+        border-radius: 12px !important;
+    }}
+    div[data-testid="stChatInput"] textarea::placeholder,
+    .stChatInput textarea::placeholder {{
+        color: #8a8f98 !important;
+        opacity: 1 !important;
+    }}
+    div[data-testid="stChatInput"] {{
+        background-color: #ffffff !important;
+        border-radius: 12px !important;
+    }}
     </style>
     """,
     unsafe_allow_html=True,
