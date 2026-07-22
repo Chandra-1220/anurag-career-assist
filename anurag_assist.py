@@ -73,13 +73,13 @@ st.markdown(
     }}
     .site-header h1 {{
         font-family: 'Playfair Display', serif;
-        color: #ffffff;
+        color: {CREAM};
         font-size: 2.6rem;
         margin-bottom: 0.3rem;
         letter-spacing: 0.3px;
     }}
     .site-header p {{
-        color: {GOLD};
+        color: {CREAM};
         font-size: 1.05rem;
         font-weight: 500;
         letter-spacing: 0.5px;
@@ -87,7 +87,7 @@ st.markdown(
         margin: 0;
     }}
     .site-header .tagline {{
-        color: #dfe7f0;
+        color: {CREAM};
         text-transform: none;
         font-weight: 400;
         font-size: 1rem;
