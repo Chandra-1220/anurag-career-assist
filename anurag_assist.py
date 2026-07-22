@@ -91,7 +91,7 @@ st.markdown(
     }}
     .site-header h1 {{
         font-family: 'Playfair Display', serif;
-        color: {CREAM} !important;
+        color: {GOLD} !important;
         font-size: 2.6rem;
         margin-bottom: 0.3rem;
         letter-spacing: 0.3px;
