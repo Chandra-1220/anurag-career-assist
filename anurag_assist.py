@@ -22,9 +22,23 @@ SLATE = "#233044"
 TEAL = "#2F6690"
 
 st.markdown(
+    """
+    <meta name="color-scheme" content="light only">
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
     f"""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+    :root {{
+        color-scheme: light only;
+    }}
+    html, body {{
+        color-scheme: light only;
+    }}
 
     html, body, [class*="css"]  {{
         font-family: 'Inter', sans-serif;
@@ -304,7 +318,7 @@ with tab_home:
                 )
     with col2:
         st.image(
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80",
+            "https://picsum.photos/id/1074/900/600",
             caption="Anurag University students",
             use_container_width=True,
         )
@@ -334,7 +348,7 @@ with tab_academics:
     topics = [
         {
             "title": "💻 IT Jobs & Coding Basics",
-            "image": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=900&q=80",
+            "image": "https://picsum.photos/id/0/900/600",
             "points": [
                 "Start with one language (Python or Java) and build small projects before job hunting.",
                 "Learn Git, basic SQL, and one framework relevant to your target role.",
@@ -343,7 +357,7 @@ with tab_academics:
         },
         {
             "title": "🏛️ Government Jobs",
-            "image": "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=900&q=80",
+            "image": "https://picsum.photos/id/1029/900/600",
             "points": [
                 "Identify exams matching your degree: SSC, bank PO, state PSC, railway, or defence exams.",
                 "Build a fixed daily study timetable and revise previous years' question papers.",
@@ -352,7 +366,7 @@ with tab_academics:
         },
         {
             "title": "🧑‍💼 Internships",
-            "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80",
+            "image": "https://picsum.photos/id/1076/900/600",
             "points": [
                 "Use LinkedIn, Internshala, and your college placement cell to find openings.",
                 "Even unpaid internships in your first year build skills and references.",
@@ -361,7 +375,7 @@ with tab_academics:
         },
         {
             "title": "📄 Resume Building",
-            "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=900&q=80",
+            "image": "https://picsum.photos/id/1050/900/600",
             "points": [
                 "Keep it to one page with clear sections: Education, Skills, Projects, Experience.",
                 "Use action verbs and numbers (e.g. 'Built a website used by 200+ students').",
@@ -370,7 +384,7 @@ with tab_academics:
         },
         {
             "title": "🗣️ Communication Skills",
-            "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80",
+            "image": "https://picsum.photos/id/1062/900/600",
             "points": [
                 "Practice speaking English or Hindi/Telugu for 10 minutes daily on familiar topics.",
                 "Join college clubs, debates, or group discussions to build confidence.",
@@ -379,7 +393,7 @@ with tab_academics:
         },
         {
             "title": "🤝 Interview Preparation",
-            "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80",
+            "image": "https://picsum.photos/id/1027/900/600",
             "points": [
                 "Research the company and role before every interview — even a small startup.",
                 "Prepare 3–4 stories about your projects using the Situation-Task-Action-Result format.",
