@@ -171,8 +171,7 @@ st.markdown(
         padding: 1rem 1.2rem; margin-bottom: 0.9rem; border-top: 4px solid {GOLD};
     }}
     .job-card h4 {{ color: {NAVY}; margin: 0 0 0.3rem 0; }}
-    .match-pill,
-.match-pill * {{
+    .match-pill {{
     color: white !important;
     font-weight: 700;
  }}
