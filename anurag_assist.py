@@ -171,10 +171,11 @@ st.markdown(
         padding: 1rem 1.2rem; margin-bottom: 0.9rem; border-top: 4px solid {GOLD};
     }}
     .job-card h4 {{ color: {NAVY}; margin: 0 0 0.3rem 0; }}
-    .match-pill {{
-        float: right; background: {NAVY}; color: {GOLD} !important; font-weight: 700;
-        padding: 0.2rem 0.7rem; border-radius: 999px; font-size: 0.85rem;
-    }}
+    .match-pill,
+.match-pill * {{
+    color: white !important;
+    font-weight: 700;
+ }}
 
     .interview-q {{
         background: linear-gradient(135deg, {NAVY_DEEP} 0%, {NAVY} 100%);
