@@ -85,9 +85,9 @@ st.markdown(
         margin-bottom: 1.5rem;
         box-shadow: 0 6px 18px rgba(8,26,51,0.25);
     }}
-    .site-header h1 {
+    .site-header h1 {{
     color: white !important;
-}
+    }}
     .site-header p, .site-header p * {{
         color: {CREAM} !important; font-size: 1.05rem; font-weight: 500;
         letter-spacing: 0.5px; text-transform: uppercase; margin: 0;
