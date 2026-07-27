@@ -86,7 +86,7 @@ st.markdown(
         box-shadow: 0 6px 18px rgba(8,26,51,0.25);
     }}
     .site-header h1 {{
-    color: white !important;
+    color: #FFFFFF !important;
     }}
     .site-header p, .site-header p * {{
         color: {CREAM} !important; font-size: 1.05rem; font-weight: 500;
@@ -639,7 +639,9 @@ st.markdown(
     """
     <div class="site-header">
         <p>Anurag University · Placement Cell</p>
-        <h1>🎓 Career &amp; Placement Assistant</h1>
+        <h1 style="color:#FFFFFF !important;">
+    🎓 Career &amp; Placement Assistant
+</h1>
         <p class="tagline">
             Resume analysis, mock interviews, skill gap tracking, personalized
             roadmaps, and job matching — all built for our students, in the
