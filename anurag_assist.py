@@ -38,15 +38,15 @@ st.set_page_config(
 # ===========================================================
 # DESIGN TOKENS — academic navy & gold theme
 # ===========================================================
-NAVY = "#3B2E7A"
-NAVY_DEEP = "#231A4D"
-GOLD = "#FF6B5B"
-CREAM = "#F6F5FB"
-SLATE = "#2B2440"
-TEAL = "#00A6A6"
-GREEN = "#1E9E6D"
-RED = "#E0483F"
-AMBER = "#E2963C"
+NAVY = "#0A2647"
+NAVY_DEEP = "#06192E"
+GOLD = "#C8102E"
+CREAM = "#FAF6EE"
+SLATE = "#1C2B3A"
+TEAL = "#163A5F"
+GREEN = "#2E7D4F"
+RED = "#C8102E"
+AMBER = "#C97B27"
 
 st.markdown('<meta name="color-scheme" content="light only">', unsafe_allow_html=True)
 
@@ -104,7 +104,7 @@ st.markdown(
     }}
 
     .theory-card {{
-        background: #ffffff; border: 1px solid #E3DFF5; border-radius: 14px;
+        background: #ffffff; border: 1px solid #E8E1D3; border-radius: 14px;
         padding: 1.1rem 1.3rem; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(11,37,69,0.05);
     }}
     .theory-card h4 {{ color: {NAVY}; margin-bottom: 0.4rem; font-family: 'Playfair Display', serif; }}
@@ -112,7 +112,7 @@ st.markdown(
 
     .stat-box {{
         background: #ffffff; border-radius: 12px; padding: 1rem; text-align: center;
-        border: 1px solid #E3DFF5;
+        border: 1px solid #E8E1D3;
     }}
     .stat-box .num {{
         font-family: 'Playfair Display', serif; color: {GOLD}; font-size: 1.8rem; font-weight: 700;
@@ -123,7 +123,7 @@ st.markdown(
     section[data-testid="stSidebar"] * {{ color: #f0f6ff !important; }}
 
     div[data-testid="stChatMessage"] {{
-        background-color: #ffffff; border: 1px solid #E3DFF5; border-radius: 14px;
+        background-color: #ffffff; border: 1px solid #E8E1D3; border-radius: 14px;
         padding: 0.6rem 0.9rem; margin-bottom: 0.4rem;
     }}
 
@@ -131,7 +131,7 @@ st.markdown(
     div[data-testid="stChatInputTextArea"] textarea,
     .stChatInput textarea {{
         background-color: #ffffff !important; color: {SLATE} !important;
-        caret-color: {SLATE} !important; border: 1px solid #D6CFEF !important; border-radius: 12px !important;
+        caret-color: {SLATE} !important; border: 1px solid #DDD4C2 !important; border-radius: 12px !important;
     }}
     div[data-testid="stChatInput"] textarea::placeholder,
     .stChatInput textarea::placeholder {{ color: #8a8f98 !important; opacity: 1 !important; }}
@@ -139,8 +139,8 @@ st.markdown(
 
     /* ---- New feature UI ---- */
     .feature-banner {{
-        background: linear-gradient(120deg, #ffffff 0%, #FBFAFF 100%);
-        border: 1px solid #E3DFF5; border-left: 5px solid {GOLD};
+        background: linear-gradient(120deg, #ffffff 0%, #FDFBF6 100%);
+        border: 1px solid #E8E1D3; border-left: 5px solid {GOLD};
         border-radius: 12px; padding: 0.9rem 1.2rem; margin-bottom: 1.2rem;
         color: {SLATE}; font-size: 0.95rem;
     }}
@@ -157,7 +157,7 @@ st.markdown(
     .chip-no {{ background: #fdecea; color: {RED}; border: 1px solid #f4c7c1; }}
 
     .roadmap-card {{
-        background: #ffffff; border: 1px solid #E3DFF5; border-left: 5px solid {TEAL};
+        background: #ffffff; border: 1px solid #E8E1D3; border-left: 5px solid {TEAL};
         border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.9rem;
     }}
     .roadmap-week {{
@@ -167,7 +167,7 @@ st.markdown(
     }}
 
     .job-card {{
-        background: #ffffff; border: 1px solid #E3DFF5; border-radius: 14px;
+        background: #ffffff; border: 1px solid #E8E1D3; border-radius: 14px;
         padding: 1rem 1.2rem; margin-bottom: 0.9rem; border-top: 4px solid {GOLD};
     }}
     .job-card h4 {{ color: {NAVY}; margin: 0 0 0.3rem 0; }}
@@ -211,7 +211,7 @@ st.markdown(
     }}
 
     .empty-chat-card {{
-        background: #ffffff; border: 1px dashed #D6CFEF; border-radius: 16px;
+        background: #ffffff; border: 1px dashed #DDD4C2; border-radius: 16px;
         padding: 1.6rem; text-align: center; margin-bottom: 1rem;
     }}
     .empty-chat-card .big-emoji {{ font-size: 2.4rem; margin-bottom: 0.4rem; }}
@@ -266,7 +266,7 @@ st.markdown(
     .stSelectbox div[data-baseweb="select"] > div,
     .stMultiSelect div[data-baseweb="select"] > div {{
         background-color: #ffffff !important; color: {SLATE} !important;
-        border: 1px solid #D6CFEF !important; caret-color: {SLATE} !important;
+        border: 1px solid #DDD4C2 !important; caret-color: {SLATE} !important;
     }}
     .stTextInput input::placeholder, .stTextArea textarea::placeholder {{
         color: #8a8f98 !important; opacity: 1 !important;
@@ -276,7 +276,7 @@ st.markdown(
     div[data-baseweb="menu"] {{
         background-color: #ffffff !important; color: {SLATE} !important;
     }}
-    div[data-baseweb="popover"] li:hover {{ background-color: #F0ECFB !important; }}
+    div[data-baseweb="popover"] li:hover {{ background-color: #F3EEE0 !important; }}
     /* Multiselect selected-item tags */
     span[data-baseweb="tag"] {{
         background-color: {NAVY} !important; color: {CREAM} !important;
@@ -284,7 +284,7 @@ st.markdown(
     span[data-baseweb="tag"] * {{ color: {CREAM} !important; }}
 
     /* Alerts (st.info / st.warning / st.error / st.success) — force light-theme-safe pairs */
-    div[data-testid="stAlert"] {{ background-color: #ffffff !important; border: 1px solid #E3DFF5 !important; }}
+    div[data-testid="stAlert"] {{ background-color: #ffffff !important; border: 1px solid #E8E1D3 !important; }}
     div[data-testid="stAlert"] p, div[data-testid="stAlert"] span, div[data-testid="stAlert"] div {{
         color: {SLATE} !important;
     }}
@@ -297,12 +297,12 @@ st.markdown(
 
     /* File uploader dropzone */
     div[data-testid="stFileUploaderDropzone"] {{
-        background-color: #ffffff !important; border: 1px dashed #D6CFEF !important;
+        background-color: #ffffff !important; border: 1px dashed #DDD4C2 !important;
     }}
     div[data-testid="stFileUploaderDropzone"] * {{ color: {SLATE} !important; }}
 
     /* Expander */
-    div[data-testid="stExpander"] {{ background-color: #ffffff !important; border: 1px solid #E3DFF5 !important; }}
+    div[data-testid="stExpander"] {{ background-color: #ffffff !important; border: 1px solid #E8E1D3 !important; }}
     div[data-testid="stExpander"] * {{ color: {SLATE} !important; }}
     </style>
     """,
@@ -407,7 +407,7 @@ def gauge_chart(value, title, color=GOLD):
             "bar": {"color": color},
             "bgcolor": "white",
             "borderwidth": 1,
-            "bordercolor": "#E3DFF5",
+            "bordercolor": "#E8E1D3",
             "steps": [
                 {"range": [0, 40], "color": "#fdecea"},
                 {"range": [40, 70], "color": "#fff4e0"},
