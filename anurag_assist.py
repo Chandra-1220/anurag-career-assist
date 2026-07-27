@@ -38,15 +38,15 @@ st.set_page_config(
 # ===========================================================
 # DESIGN TOKENS — academic navy & gold theme
 # ===========================================================
-NAVY = "#0B2545"
-NAVY_DEEP = "#081A33"
-GOLD = "#C9A24B"
-CREAM = "#F7F5EF"
-SLATE = "#233044"
-TEAL = "#2F6690"
-GREEN = "#2E8B57"
-RED = "#C0392B"
-AMBER = "#C98A2C"
+NAVY = "#1F3A5F"
+NAVY_DEEP = "#102A43"
+GOLD = "#9C6B00"
+CREAM = "#FAFAFA"
+SLATE = "#1A1A1A"
+TEAL = "#2E86C1"
+GREEN = "#2E7D32"
+RED = "#C62828"
+AMBER = "#B26A00"
 
 st.markdown('<meta name="color-scheme" content="light only">', unsafe_allow_html=True)
 
