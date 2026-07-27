@@ -86,8 +86,11 @@ st.markdown(
         box-shadow: 0 6px 18px rgba(8,26,51,0.25);
     }}
     .site-header h1 {{
-        font-family: 'Playfair Display', serif; color: {GOLD} !important;
-        font-size: 2.6rem; margin-bottom: 0.3rem; letter-spacing: 0.3px;
+    font-family: 'Playfair Display', serif;
+    color: #FFFFFF !important;
+    font-size: 2.6rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.3px;
     }}
     .site-header p, .site-header p * {{
         color: {CREAM} !important; font-size: 1.05rem; font-weight: 500;
