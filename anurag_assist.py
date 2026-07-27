@@ -182,6 +182,84 @@ st.markdown(
         margin-bottom: 1rem; font-size: 1.05rem;
     }}
     .interview-q * {{ color: {CREAM} !important; }}
+
+    /* ---- Chat Assistant redesign ---- */
+    .chat-hero {{
+        background: linear-gradient(135deg, {NAVY_DEEP} 0%, {NAVY} 55%, {TEAL} 100%);
+        border-radius: 16px; padding: 1.4rem 1.6rem; margin-bottom: 1.1rem;
+        box-shadow: 0 6px 16px rgba(11,37,69,0.2);
+        display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
+    }}
+    .chat-hero .chat-hero-text h3 {{
+        color: {GOLD} !important; font-family: 'Playfair Display', serif; margin: 0 0 0.2rem 0; font-size: 1.4rem;
+    }}
+    .chat-hero .chat-hero-text p {{ color: {CREAM} !important; margin: 0; font-size: 0.92rem; }}
+    .chat-hero .chat-hero-emoji {{ font-size: 2.4rem; }}
+    .chat-status-pill {{
+        display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(201,162,75,0.18);
+        border: 1px solid {GOLD}; color: {GOLD} !important; padding: 0.3rem 0.8rem; border-radius: 999px;
+        font-size: 0.8rem; font-weight: 600;
+    }}
+    .chat-status-dot {{
+        width: 8px; height: 8px; border-radius: 50%; background: #4CD964; display: inline-block;
+        box-shadow: 0 0 0 0 rgba(76,217,100,0.6); animation: pulse-dot 1.6s infinite;
+    }}
+    @keyframes pulse-dot {{
+        0% {{ box-shadow: 0 0 0 0 rgba(76,217,100,0.6); }}
+        70% {{ box-shadow: 0 0 0 6px rgba(76,217,100,0); }}
+        100% {{ box-shadow: 0 0 0 0 rgba(76,217,100,0); }}
+    }}
+
+    .empty-chat-card {{
+        background: #ffffff; border: 1px dashed #d8d2c2; border-radius: 16px;
+        padding: 1.6rem; text-align: center; margin-bottom: 1rem;
+    }}
+    .empty-chat-card .big-emoji {{ font-size: 2.4rem; margin-bottom: 0.4rem; }}
+    .empty-chat-card h4 {{ color: {NAVY}; font-family: 'Playfair Display', serif; margin-bottom: 0.3rem; }}
+    .empty-chat-card p {{ color: {SLATE}; font-size: 0.92rem; margin-bottom: 0; }}
+
+    /* Suggestion chip buttons */
+    div[data-testid="stHorizontalBlock"] .stButton button {{
+        background: #ffffff !important; color: {NAVY} !important; border: 1px solid {GOLD} !important;
+        border-radius: 999px !important; font-size: 0.82rem !important; font-weight: 600 !important;
+        padding: 0.35rem 0.9rem !important; box-shadow: none !important; white-space: normal !important;
+    }}
+    div[data-testid="stHorizontalBlock"] .stButton button:hover {{
+        background: {NAVY} !important; color: {GOLD} !important; border: 1px solid {NAVY} !important;
+    }}
+
+    /* Chat bubbles — align user right, assistant left, distinct colors */
+    div[data-testid="stChatMessage"] {{
+        max-width: 88%;
+        box-shadow: 0 2px 8px rgba(11,37,69,0.06);
+    }}
+    div[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {{
+        margin-left: auto; margin-right: 0;
+        background: linear-gradient(135deg, {NAVY} 0%, {TEAL} 100%) !important;
+        border: none !important; border-bottom-right-radius: 4px !important;
+        flex-direction: row-reverse;
+    }}
+    div[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) p,
+    div[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) li,
+    div[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) span {{
+        color: {CREAM} !important;
+    }}
+    div[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {{
+        margin-right: auto; margin-left: 0;
+        border-left: 4px solid {GOLD} !important; border-bottom-left-radius: 4px !important;
+    }}
+
+    .typing-indicator {{ display: inline-flex; gap: 4px; align-items: center; padding: 0.2rem 0; }}
+    .typing-indicator span {{
+        width: 7px; height: 7px; border-radius: 50%; background: {TEAL}; display: inline-block;
+        animation: typing-bounce 1.2s infinite ease-in-out;
+    }}
+    .typing-indicator span:nth-child(2) {{ animation-delay: 0.2s; }}
+    .typing-indicator span:nth-child(3) {{ animation-delay: 0.4s; }}
+    @keyframes typing-bounce {{
+        0%, 60%, 100% {{ transform: translateY(0); opacity: 0.5; }}
+        30% {{ transform: translateY(-5px); opacity: 1; }}
+    }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -1011,8 +1089,48 @@ with tab_dashboard:
 # TAB 8 — CHAT ASSISTANT
 # -----------------------------------------------------------
 with tab_chat:
-    st.markdown('<div class="section-title">Chat with the Assistant</div>', unsafe_allow_html=True)
     AVATARS = {"user": "🧑‍🎓", "assistant": "🎓"}
+    real_msg_count = len([m for m in st.session_state.messages if m["role"] != "system"])
+
+    st.markdown(
+        f"""
+        <div class="chat-hero">
+            <div class="chat-hero-text">
+                <h3><span class="chat-hero-emoji">🎓</span>&nbsp; Chat with Your Career Assistant</h3>
+                <p>Ask about resumes, interviews, coding, internships, or government exams — anytime.</p>
+            </div>
+            <div class="chat-status-pill"><span class="chat-status-dot"></span> Online · replying in {language}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    SUGGESTIONS = [
+        "🧑‍💻 How do I start preparing for IT jobs?",
+        "🏛️ Government job vs private job — which is better for me?",
+        "📄 What should my resume include as a fresher?",
+        "🎤 How do I answer 'Tell me about yourself'?",
+    ]
+
+    pending_prompt = None
+
+    if real_msg_count == 0:
+        st.markdown(
+            """
+            <div class="empty-chat-card">
+                <div class="big-emoji">💬</div>
+                <h4>No messages yet — say hello!</h4>
+                <p>Try one of the quick questions below, or type your own in the box.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        s1, s2 = st.columns(2)
+        s3, s4 = st.columns(2)
+        for col, sug in zip([s1, s2, s3, s4], SUGGESTIONS):
+            with col:
+                if st.button(sug, use_container_width=True, key=f"sugg_{sug}"):
+                    pending_prompt = sug.split(" ", 1)[1]
 
     for msg in st.session_state.messages:
         if msg["role"] == "system":
@@ -1020,7 +1138,8 @@ with tab_chat:
         with st.chat_message(msg["role"], avatar=AVATARS.get(msg["role"])):
             st.write(msg["content"])
 
-    user_input = st.chat_input(PLACEHOLDER_TEXT.get(language, "Type your question..."))
+    typed_input = st.chat_input(PLACEHOLDER_TEXT.get(language, "Type your question..."))
+    user_input = typed_input or pending_prompt
 
     if user_input:
         st.session_state.messages.append({"role": "user", "content": user_input})
@@ -1029,7 +1148,7 @@ with tab_chat:
 
         with st.chat_message("assistant", avatar=AVATARS["assistant"]):
             placeholder = st.empty()
-            placeholder.markdown("_Thinking..._")
+            placeholder.markdown('<div class="typing-indicator"><span></span><span></span><span></span></div>', unsafe_allow_html=True)
             try:
                 response = client.chat.completions.create(
                     model="gpt-4.1-mini",
@@ -1040,6 +1159,9 @@ with tab_chat:
                 st.session_state.messages.append({"role": "assistant", "content": ai_reply})
             except Exception as e:
                 placeholder.write(f"⚠️ Error: {str(e)}")
+
+        if pending_prompt:
+            st.rerun()
 
 # -----------------------------------------------------------
 # TAB 9 — CONTACT
