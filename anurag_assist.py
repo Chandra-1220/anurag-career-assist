@@ -260,6 +260,50 @@ st.markdown(
         0%, 60%, 100% {{ transform: translateY(0); opacity: 0.5; }}
         30% {{ transform: translateY(-5px); opacity: 1; }}
     }}
+
+    /* ---- Hardened form controls: always pair a background with its text color ---- */
+    .stTextInput input, .stTextArea textarea, .stNumberInput input,
+    .stSelectbox div[data-baseweb="select"] > div,
+    .stMultiSelect div[data-baseweb="select"] > div {{
+        background-color: #ffffff !important; color: {SLATE} !important;
+        border: 1px solid #d8d2c2 !important; caret-color: {SLATE} !important;
+    }}
+    .stTextInput input::placeholder, .stTextArea textarea::placeholder {{
+        color: #8a8f98 !important; opacity: 1 !important;
+    }}
+    /* Dropdown / multiselect popover menus (BaseWeb renders these in a portal, outside .stApp) */
+    div[data-baseweb="popover"] ul, div[data-baseweb="popover"] li,
+    div[data-baseweb="menu"] {{
+        background-color: #ffffff !important; color: {SLATE} !important;
+    }}
+    div[data-baseweb="popover"] li:hover {{ background-color: #f2eee2 !important; }}
+    /* Multiselect selected-item tags */
+    span[data-baseweb="tag"] {{
+        background-color: {NAVY} !important; color: {CREAM} !important;
+    }}
+    span[data-baseweb="tag"] * {{ color: {CREAM} !important; }}
+
+    /* Alerts (st.info / st.warning / st.error / st.success) — force light-theme-safe pairs */
+    div[data-testid="stAlert"] {{ background-color: #ffffff !important; border: 1px solid #e7e2d6 !important; }}
+    div[data-testid="stAlert"] p, div[data-testid="stAlert"] span, div[data-testid="stAlert"] div {{
+        color: {SLATE} !important;
+    }}
+
+    /* Radio / checkbox labels inside the main app (not sidebar) */
+    section[data-testid="stMain"] div[data-testid="stRadio"] label,
+    section[data-testid="stMain"] div[data-testid="stCheckbox"] label {{
+        color: {SLATE} !important;
+    }}
+
+    /* File uploader dropzone */
+    div[data-testid="stFileUploaderDropzone"] {{
+        background-color: #ffffff !important; border: 1px dashed #d8d2c2 !important;
+    }}
+    div[data-testid="stFileUploaderDropzone"] * {{ color: {SLATE} !important; }}
+
+    /* Expander */
+    div[data-testid="stExpander"] {{ background-color: #ffffff !important; border: 1px solid #e7e2d6 !important; }}
+    div[data-testid="stExpander"] * {{ color: {SLATE} !important; }}
     </style>
     """,
     unsafe_allow_html=True,
