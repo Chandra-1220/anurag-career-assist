@@ -171,12 +171,10 @@ st.markdown(
         padding: 1rem 1.2rem; margin-bottom: 0.9rem; border-top: 4px solid {GOLD};
     }}
     .job-card h4 {{ color: {NAVY}; margin: 0 0 0.3rem 0; }}
-     .match_pill,
-     .match-pill * {{
-        float: right; background: {NAVY}; color: white !important; font-weight: 700;
+    .match-pill {{
+        float: right; background: {NAVY}; color: {GOLD} !important; font-weight: 700;
         padding: 0.2rem 0.7rem; border-radius: 999px; font-size: 0.85rem;
     }}
-
 
     .interview-q {{
         background: linear-gradient(135deg, {NAVY_DEEP} 0%, {NAVY} 100%);
@@ -306,6 +304,64 @@ st.markdown(
     /* Expander */
     div[data-testid="stExpander"] {{ background-color: #ffffff !important; border: 1px solid #e7e2d6 !important; }}
     div[data-testid="stExpander"] * {{ color: {SLATE} !important; }}
+
+    /* ---- Dashboard redesign ---- */
+    .dash-hero {{
+        background: linear-gradient(135deg, {NAVY_DEEP} 0%, {NAVY} 55%, {TEAL} 100%);
+        border-radius: 16px; padding: 1.5rem 1.7rem; margin-bottom: 1.3rem;
+        box-shadow: 0 6px 16px rgba(11,37,69,0.2);
+        display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }}
+    .dash-hero .dash-hero-text h3 {{
+        color: {GOLD} !important; font-family: 'Playfair Display', serif; margin: 0 0 0.25rem 0; font-size: 1.5rem;
+    }}
+    .dash-hero .dash-hero-text p {{ color: {CREAM} !important; margin: 0; font-size: 0.92rem; }}
+    .dash-hero .dash-hero-emoji {{ font-size: 2.6rem; }}
+
+    .verdict-card {{
+        border-radius: 16px; padding: 1.3rem 1.6rem; margin-bottom: 1.4rem;
+        display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+        box-shadow: 0 4px 14px rgba(11,37,69,0.08); border: 1px solid #e7e2d6;
+    }}
+    .verdict-ring {{
+        min-width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center;
+        justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.6rem;
+        font-weight: 700; color: #fff !important; flex-shrink: 0;
+    }}
+    .verdict-body h4 {{ margin: 0 0 0.2rem 0; font-family: 'Playfair Display', serif; color: {NAVY}; font-size: 1.25rem; }}
+    .verdict-body p {{ margin: 0; color: {SLATE}; font-size: 0.92rem; }}
+    .verdict-badge {{
+        display: inline-block; margin-top: 0.4rem; padding: 0.2rem 0.7rem; border-radius: 999px;
+        font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;
+    }}
+
+    .metric-card {{
+        background: #ffffff; border: 1px solid #e7e2d6; border-radius: 16px;
+        padding: 1rem 1rem 0.4rem 1rem; box-shadow: 0 2px 8px rgba(11,37,69,0.05);
+        height: 100%; position: relative; overflow: hidden;
+    }}
+    .metric-card::before {{
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    }}
+    .metric-card .metric-title {{
+        font-weight: 700; color: {NAVY}; font-size: 0.9rem; margin-bottom: -0.4rem;
+        display: flex; align-items: center; gap: 0.4rem;
+    }}
+    .metric-card .metric-empty {{
+        text-align: center; padding: 1.6rem 0.5rem; color: {SLATE}; font-size: 0.85rem;
+    }}
+    .metric-card .metric-empty .icon {{ font-size: 1.8rem; display: block; margin-bottom: 0.4rem; opacity: 0.6; }}
+
+    .steps-card {{
+        background: #ffffff; border: 1px solid #e7e2d6; border-left: 5px solid {GOLD};
+        border-radius: 12px; padding: 0.9rem 1.1rem; margin-bottom: 0.7rem;
+        display: flex; align-items: flex-start; gap: 0.7rem;
+        box-shadow: 0 2px 6px rgba(11,37,69,0.04);
+    }}
+    .steps-card .steps-icon {{ font-size: 1.3rem; line-height: 1.4rem; }}
+    .steps-card .steps-text {{ color: {SLATE}; font-size: 0.93rem; line-height: 1.4rem; }}
+    .steps-card .steps-text b {{ color: {NAVY}; }}
+    .steps-card.steps-ok {{ border-left-color: {GREEN}; }}
     </style>
     """,
     unsafe_allow_html=True,
