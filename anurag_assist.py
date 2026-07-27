@@ -38,15 +38,15 @@ st.set_page_config(
 # ===========================================================
 # DESIGN TOKENS — academic navy & gold theme
 # ===========================================================
-NAVY = "#1F3A5F"
-NAVY_DEEP = "#102A43"
-GOLD = "#9C6B00"
-CREAM = "#FAFAFA"
-SLATE = "#1A1A1A"
-TEAL = "#2E86C1"
-GREEN = "#2E7D32"
-RED = "#C62828"
-AMBER = "#B26A00"
+NAVY = "#0B2545"
+NAVY_DEEP = "#081A33"
+GOLD = "#C9A24B"
+CREAM = "#F7F5EF"
+SLATE = "#233044"
+TEAL = "#2F6690"
+GREEN = "#2E8B57"
+RED = "#C0392B"
+AMBER = "#C98A2C"
 
 st.markdown('<meta name="color-scheme" content="light only">', unsafe_allow_html=True)
 
@@ -86,7 +86,8 @@ st.markdown(
         box-shadow: 0 6px 18px rgba(8,26,51,0.25);
     }}
     .site-header h1 {{
-    color: #FFFFFF !important;
+        font-family: 'Playfair Display', serif; color: {GOLD} !important;
+        font-size: 2.6rem; margin-bottom: 0.3rem; letter-spacing: 0.3px;
     }}
     .site-header p, .site-header p * {{
         color: {CREAM} !important; font-size: 1.05rem; font-weight: 500;
@@ -639,9 +640,7 @@ st.markdown(
     """
     <div class="site-header">
         <p>Anurag University · Placement Cell</p>
-        <h1 style="color:#FFFFFF !important;">
-    🎓 Career &amp; Placement Assistant
-</h1>
+        <h1>🎓 Career &amp; Placement Assistant</h1>
         <p class="tagline">
             Resume analysis, mock interviews, skill gap tracking, personalized
             roadmaps, and job matching — all built for our students, in the
